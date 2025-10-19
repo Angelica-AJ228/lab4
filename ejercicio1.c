@@ -30,18 +30,17 @@ int main() {
 		}
 	}
 
-	for (int = 0; i < numFil * numCol; i++) {
+	for (int i = 0; i < numFil * numCol; i++) {
 		*(punt_matr + i) = *(punt_arre + i);
 	}
 
 	printf("Matriz de tamano %dx%d:\n", numFil, numCol);
 	for (int i = 0; i < numFil; i++) {
 		for (int j = 0; j < numCol; j++) {
-			print("%d ", matriz[i][j]);
+			printf("%d ", matriz[i][j]);
 		}
 		printf("\n");
 	}
 
 	return 0;
 }	
-
