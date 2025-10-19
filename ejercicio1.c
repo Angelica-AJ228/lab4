@@ -22,7 +22,7 @@ int main() {
 
 	for (int i = 0; i < numFil * numCol -1; i++) {
 		for (int j = 0; j < numFil * numCol - i - 1; j++) {
-			if (*(punt_arre + j) < *(punt_arre + j + 1)) {
+			if (*(punt_arre + j) > *(punt_arre + j + 1)) { //estaba comparando mal, corregir usando > en lugar de <
 				int aux = *(punt_arre + j);
 				*(punt_arre + j) = *(punt_arre + j + 1);
 				*(punt_arre + j + 1) = aux;
