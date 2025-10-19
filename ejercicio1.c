@@ -12,26 +12,26 @@ int main() {
 	};
 
 	int arreglo[numFil * numCol];
-	int *matriz = &matriz[0][0];
-	int *arreglo = arreglo;
+	int *punt_matr = &matriz[0][0];
+	int *punt_arre = arreglo;
 
 	for (int i = 0; i < numFil * numCol; i++) {
-		*(arreglo + i) = *(matriz + i);
+		*(punt_arre + i) = *(punt_matr + i);
 	}
 
 
 	for (int i = 0; i < numFil * numCol -1; i++) {
 		for (int j = 0; j < numFil * numCol - i - 1; j++) {
-			if (*(arreglo + j) < *(arreglo + j + 1)) {
-				int aux = *(arreglo + j);
-				*(arreglo + j) = *(arreglo + j + 1);
-				*(arreglo + j + 1) = aux;
+			if (*(punt_arre + j) < *(punt_arre + j + 1)) {
+				int aux = *(punt_arre + j);
+				*(punt_arre + j) = *(punt_arre + j + 1);
+				*(punt_arre + j + 1) = aux;
 			}
 		}
 	}
 
 	for (int = 0; i < numFil * numCol; i++) {
-		*(matriz + i) = (arreglo + i);
+		*(punt_matr + i) = *(punt_arre + i);
 	}
 
 	printf("Matriz de tamano %dx%d:\n", numFil, numCol);
