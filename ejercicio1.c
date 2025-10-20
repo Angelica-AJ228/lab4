@@ -16,8 +16,8 @@ int main() {
 	int *punt_arre = arreglo;
 	
 	printf("Matriz original:\n");
-	for (int i = 0; i < FILAS; i++) {
-		for (int j = 0; j < COLUMNAS; j++) {
+	for (int i = 0; i < numFil; i++) {
+		for (int j = 0; j < numCol; j++) {
 			printf("%d ", matriz[i][j]);
 		}
 		
@@ -45,7 +45,7 @@ int main() {
 		*(punt_matr + i) = *(punt_arre + i);
 	}
 
-	printf("Matriz de tamano %dx%d:\n", numFil, numCol);
+	printf("Matriz ordenada de tamano %dx%d:\n", numFil, numCol);
 	for (int i = 0; i < numFil; i++) {
 		for (int j = 0; j < numCol; j++) {
 			printf("%d ", matriz[i][j]);
@@ -54,4 +54,4 @@ int main() {
 	}
 
 	return 0;
-}	
+}
