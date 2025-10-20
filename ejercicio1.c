@@ -14,6 +14,17 @@ int main() {
 	int arreglo[numFil * numCol];
 	int *punt_matr = &matriz[0][0];
 	int *punt_arre = arreglo;
+	
+	printf("Matriz original:\n");
+	for (int i = 0; i < FILAS; i++) {
+		for (int j = 0; j < COLUMNAS; j++) {
+			printf("%d ", matriz[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("\n");
 
 	for (int i = 0; i < numFil * numCol; i++) {
 		*(punt_arre + i) = *(punt_matr + i);
