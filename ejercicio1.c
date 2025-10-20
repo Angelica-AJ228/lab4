@@ -6,14 +6,12 @@
 int main() {
 	int matriz[numFil][numCol] = {
 		{12, 2, 4},
-		{9, 1, 7},
+		{9, 3, 7},
 		{10, 1, 5}
 
 	};
 
-	int arreglo[numFil * numCol];
-	int *punt_matr = &matriz[0][0];
-	int *punt_arre = arreglo;
+	int *punt_matr = &matriz[0][0]; //empieza en el primer elemento
 	
 	printf("Matriz original:\n");
 	for (int i = 0; i < numFil; i++) {
@@ -26,24 +24,17 @@ int main() {
 	
 	printf("\n");
 
-	for (int i = 0; i < numFil * numCol; i++) {
-		*(punt_arre + i) = *(punt_matr + i);
-	}
-
 
 	for (int i = 0; i < numFil * numCol -1; i++) {
 		for (int j = 0; j < numFil * numCol - i - 1; j++) {
-			if (*(punt_arre + j) > *(punt_arre + j + 1)) { //estaba comparando mal, corregir usando > en lugar de <
-				int aux = *(punt_arre + j);
-				*(punt_arre + j) = *(punt_arre + j + 1);
-				*(punt_arre + j + 1) = aux;
+			if (*(punt_matr + j) > *(punt_matr + j + 1)) { //estaba comparando mal, corregir usando > en lugar de <
+				int aux = *(punt_matr + j);
+				*(punt_matr + j) = *(punt_matr + j + 1);
+				*(punt_matr + j + 1) = aux;
 			}
 		}
 	}
 
-	for (int i = 0; i < numFil * numCol; i++) {
-		*(punt_matr + i) = *(punt_arre + i);
-	}
 
 	printf("Matriz ordenada de tamano %dx%d:\n", numFil, numCol);
 	for (int i = 0; i < numFil; i++) {
