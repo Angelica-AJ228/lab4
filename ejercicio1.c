@@ -1,13 +1,15 @@
 #include <stdio.h>
 
-#define numFil 3
-#define numCol 3
+#define numFil 5
+#define numCol 5
 
 int main() {
 	int matriz[numFil][numCol] = {
-		{12, 2, 4},
-		{9, 3, 7},
-		{10, 1, 5}
+		{123, 21, 24, 89, 78},
+		{91, 13, 17, 12, 1},
+		{20, 11, 54, 67, 3},
+		{34, 8, 22, 45, 14},
+		{9, 30, 100, 4, 87}
 
 	};
 
