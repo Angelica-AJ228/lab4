@@ -18,9 +18,9 @@ int comparar(const char *a, const char *b) {
 }
 
 int puntuacion(char c) {
-	return (c == '.' || c == ',' || c == ';' || c == ':' || c == '!' || c == '?' || c == '"' || c == '\' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '¿' || c == '¡');
+	return (c == '.' || c == ',' || c == ';' || c == ':' || c == '!' || c == '?' || c == '"' || c == '\'' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '¿' || c == '¡');
 
-
+}
 
 int main(int argumento, char *argu[]) {
 	if (argumento != 4) {
@@ -79,6 +79,18 @@ int main(int argumento, char *argu[]) {
 			for (int i = 0; i < inicio; i++) {
 				fputc(wrd[i], sal);
 			}
+
+			fprintf(sal, "%s", reemplazo);
+			for (int i = fin + 1; i < len; i++) {
+				fputc(wrd[i], sal);
+			}
+
+			fprintf(sal, " ");
+		} else {
+			fprintf(sal, "%s ", wrd);
+		}
+
+	}
 
 	fclose(entra);
 	fclose(sal);
