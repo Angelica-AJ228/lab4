@@ -33,3 +33,18 @@ int main(int argumento, char *argumento[]) {
 			limpiar[len - 1] = '/0';
 		}
 
+		if (strcmp(limpiar, buscar) == 0) {
+			fprintf(sal, "%s ", reemplazo);
+		} else {
+			fprintf(sal, "%s ", wrd);
+		}
+
+	}
+
+	fclose(entra);
+	fclose(sal);
+
+	printf("Palabra reemplazada exitosamente en archivo: reemplazo.txt\n");
+	return 0;
+
+}
