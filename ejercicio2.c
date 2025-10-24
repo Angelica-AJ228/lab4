@@ -18,7 +18,7 @@ int comparar(const char *a, const char *b) {
 }
 
 int puntuacion(char c) {
-	return (c == '.' || c == ',' || c == ';' || c == ':' || c == '!' || c == '?' || c == '"' || c == '\'' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '¿' || c == '¡');
+	return (c == '.' || c == ',' || c == ';' || c == ':' || c == '!' || c == '?' || c == '"' || c == '\'' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}');
 
 }
 
@@ -31,7 +31,7 @@ int main(int argumento, char *argu[]) {
 	FILE *entra = fopen(argu[1], "r");
 	if (entra == NULL) {
 		printf("Error: no se puedo abrir.\n");
-		fclose(entra)
+		fclose(entra);
 		return 0;
 	}
 
@@ -44,7 +44,6 @@ int main(int argumento, char *argu[]) {
 	}
 
 	char wrd[max];
-	char limpiar[max];
 	char *buscar = argu[2];
 	char *reemplazo = argu[3];
 	char core[max];
@@ -59,7 +58,7 @@ int main(int argumento, char *argu[]) {
 			inicio++;
 		}
 
-		while (inicio >= 0 && puntuacion(wrd[fin])) {
+		while (fin >= 0 && puntuacion(wrd[fin])) {
 			fin--;
 		}
 
@@ -73,7 +72,7 @@ int main(int argumento, char *argu[]) {
 			core[j++] = wrd[i];
 		}
 
-		core[i] = '\0';
+		core[j] = '\0';
 
 		if (comparar(core, buscar)) {
 			for (int i = 0; i < inicio; i++) {
